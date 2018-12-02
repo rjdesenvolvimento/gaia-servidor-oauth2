@@ -3,6 +3,7 @@ package com.rjdesenvolvimento.gaiaservidoroauth.configuracao.token;
 import com.rjdesenvolvimento.gaiaservidoroauth.domain.usuario.Usuario;
 import com.rjdesenvolvimento.gaiaservidoroauth.repository.usuario.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -11,6 +12,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import java.util.HashMap;
 import java.util.Map;
 
+@Configuration
 public class TokenPersonalizado extends JwtAccessTokenConverter {
 
     @Autowired
@@ -29,6 +31,4 @@ public class TokenPersonalizado extends JwtAccessTokenConverter {
         defaultOAuth2AccessToken.setAdditionalInformation(informacaoAdicional);
         return super.enhance(defaultOAuth2AccessToken, authentication);
     }
-
-
 }
