@@ -20,7 +20,7 @@ public class InstanciarProprietarioService {
 
     public void instanciarUsuarioRJDesenvolvimento() {
         var usuarioRJDesenvolvimento = new Usuario(true, 1L, 1L, "rjdesenvolvimento@outlook.com",
-                encriptar.passwordEncoder().encode("RJDDourados2018!"));
+                encriptar.passwordEncoder().encode("segredo"));
         usuarioRJDesenvolvimento.adicionarPerfil(777);
         usuarioRepository.save(usuarioRJDesenvolvimento);
     }
